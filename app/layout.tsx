@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import '../globals.css';
 import Providers from './providers';
+import Header from './components/Header';
 
 export const metadata = {
 	title: 'Random Jokes',
@@ -16,19 +17,8 @@ export default function RootLayout({
 		<html lang='en'>
 			<body>
 				<Providers>
-					<header>
-						<nav>
-							<ul>
-								<li>
-									<Link href='/blog/7'>Go to Screen</Link>
-								</li>
-								<li>2</li>
-								<li>3</li>
-								<li>4</li>
-							</ul>
-						</nav>
-					</header>
-					<main>{children}</main>
+					<Header />
+					<main className='container mx-auto p-4'>{children}</main>
 				</Providers>
 			</body>
 		</html>
