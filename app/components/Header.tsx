@@ -4,7 +4,7 @@ import ThemeButton from './ThemeButton';
 const Header = () => {
 	return (
 		<header className='bg-gray-800 text-white shadow-md'>
-			<nav className='container mx-auto p-4 flex items-center justify-between'>
+			<nav className=' p-4 flex items-center justify-between'>
 				<div className='flex items-center flex-row'>
 					<Link
 						className='flex items-center space-x-2 mr-10'

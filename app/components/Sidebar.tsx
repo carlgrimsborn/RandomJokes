@@ -1,3 +1,4 @@
+'use client';
 import {
 	Sidebar,
 	SidebarContent,
@@ -19,51 +20,78 @@ import {
 	Type,
 	Ghost
 } from 'lucide-react';
+import { useState } from 'react';
+import BlackListSideBarMenu from './BlackListSideBarMenu';
 
 export const SideBar = () => {
+	const [currentSelected, setCurrentSelected] = useState<number | null>(null);
+
 	const items = [
 		{
 			title: 'Programming',
-			url: '#',
+			url: '#programming',
 			icon: SquareCode
 		},
 		{
 			title: 'Misc',
-			url: '#',
+			url: '#misc',
 			icon: SquareDashedBottom
 		},
 		{
 			title: 'Dark',
-			url: '#',
+			url: '#dark',
 			icon: Skull
 		},
 		{
 			title: 'Pun',
-			url: '#',
+			url: '#pun',
 			icon: Type
 		},
 		{
 			title: 'Spooky',
-			url: '#',
+			url: '#spooky',
 			icon: Ghost
 		},
 		{
 			title: 'Christmas',
-			url: '#',
+			url: '#christmas',
 			icon: CandyCane
 		}
 	];
+
+	const blackListItems = [
+		'nsfw',
+		'religious',
+		'political',
+		'racist',
+		'sexist',
+		'explicit'
+	];
+
 	return (
 		<Sidebar className='h-screen' collapsible='none'>
-			<SidebarHeader />
+			<SidebarHeader className='text-center mt-3'>
+				Categories
+			</SidebarHeader>
 			<SidebarContent>
 				<SidebarGroup>
-					<SidebarGroupLabel>Categories</SidebarGroupLabel>
+					<SidebarGroupLabel>Browse Categories</SidebarGroupLabel>
 					<SidebarGroupContent>
 						<SidebarMenu>
-							{items.map((item) => (
+							{items.map((item, i) => (
 								<SidebarMenuItem key={item.title}>
-									<SidebarMenuButton asChild>
+									<SidebarMenuButton
+										asChild
+										isActive={
+											!!currentSelected &&
+											currentSelected === i + 1
+										}
+										onClick={() =>
+											setCurrentSelected((prev) =>
+												prev === i + 1 ? null : i + 1
+											)
+										}
+									>
 										<a href={item.url}>
 											<item.icon />
 											<span>{item.title}</span>
@@ -73,6 +101,10 @@ export const SideBar = () => {
 							))}
 						</SidebarMenu>
 					</SidebarGroupContent>
+					<SidebarGroup className='p-0 pt-1'>
+						<SidebarGroupLabel>BlackList flags</SidebarGroupLabel>
+						<BlackListSideBarMenu items={blackListItems} />
+					</SidebarGroup>
 				</SidebarGroup>
 			</SidebarContent>
 			<SidebarFooter />
