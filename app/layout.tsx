@@ -1,8 +1,7 @@
-import Link from 'next/link';
 import '../globals.css';
 import Providers from './providers';
 import Header from './components/Header';
-import { SideBar } from './components/Sidebar';
+import { SideBar } from './components/SideBar/Sidebar';
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 
 export const metadata = {
@@ -19,12 +18,14 @@ export default function RootLayout({
 		<html lang='en' suppressHydrationWarning>
 			<body>
 				<Providers>
-					<Header />
-					<SidebarProvider className='flex flex-row'>
-						<SideBar />
-						<main className='container mx-auto p-4'>
-							{children}
-						</main>
+					<SidebarProvider className='flex-col'>
+						<Header />
+						<div className='flex'>
+							<SideBar />
+							<main className='flex-grow p-4 h-[calc(100vh-70px)] flex items-center justify-center'>
+								{children}
+							</main>
+						</div>
 					</SidebarProvider>
 				</Providers>
 			</body>

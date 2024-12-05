@@ -4,7 +4,7 @@ import ThemeButton from './ThemeButton';
 const Header = () => {
 	return (
 		<header className='bg-gray-800 text-white shadow-md'>
-			<nav className=' p-4 flex items-center justify-between'>
+			<nav className='p-4 flex items-center justify-between'>
 				<div className='flex items-center flex-row'>
 					<Link
 						className='flex items-center space-x-2 mr-10'
@@ -19,25 +19,10 @@ const Header = () => {
 					<ul className='flex space-x-4'>
 						<li>
 							<Link
-								href='/blog/7'
+								href='/search'
 								className='hover:text-gray-400'
 							>
-								Go to Screen
-							</Link>
-						</li>
-						<li>
-							<Link href='/' className='hover:text-gray-400'>
-								Main
-							</Link>
-						</li>
-						<li>
-							<Link href='/home' className='hover:text-gray-400'>
-								Home
-							</Link>
-						</li>
-						<li>
-							<Link href='/extra' className='hover:text-gray-400'>
-								Extra
+								Search
 							</Link>
 						</li>
 					</ul>

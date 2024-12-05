@@ -21,40 +21,37 @@ import {
 	Ghost
 } from 'lucide-react';
 import { useState } from 'react';
-import BlackListSideBarMenu from './BlackListSideBarMenu';
+import BlackListSideBarMenu from '../BlackListSideBarMenu';
+import Link from 'next/link';
+import { IJokeCategory } from '../../types';
+import { IItems } from './types';
 
 export const SideBar = () => {
 	const [currentSelected, setCurrentSelected] = useState<number | null>(null);
 
-	const items = [
+	const items: IItems[] = [
 		{
 			title: 'Programming',
-			url: '#programming',
 			icon: SquareCode
 		},
 		{
 			title: 'Misc',
-			url: '#misc',
 			icon: SquareDashedBottom
 		},
 		{
 			title: 'Dark',
-			url: '#dark',
 			icon: Skull
 		},
 		{
 			title: 'Pun',
-			url: '#pun',
 			icon: Type
 		},
 		{
 			title: 'Spooky',
-			url: '#spooky',
 			icon: Ghost
 		},
 		{
 			title: 'Christmas',
-			url: '#christmas',
 			icon: CandyCane
 		}
 	];
@@ -69,7 +66,7 @@ export const SideBar = () => {
 	];
 
 	return (
-		<Sidebar className='h-screen' collapsible='none'>
+		<Sidebar className='h-[calc(100vh-70px)]' collapsible='none'>
 			<SidebarHeader className='text-center mt-3'>
 				Categories
 			</SidebarHeader>
@@ -92,10 +89,12 @@ export const SideBar = () => {
 											)
 										}
 									>
-										<a href={item.url}>
+										<Link
+											href={`/categories/${item.title}`}
+										>
 											<item.icon />
 											<span>{item.title}</span>
-										</a>
+										</Link>
 									</SidebarMenuButton>
 								</SidebarMenuItem>
 							))}

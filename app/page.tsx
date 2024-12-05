@@ -1,14 +1,19 @@
-import Link from 'next/link';
-import Counter from './components/counter';
-import { Button } from '@/components/ui/button';
+import JokeView from './components/JokeView/JokeView';
+import { JokeApiSingleResponse } from './types';
 
-export default function Page() {
+async function fetchJokes() {
+	const response = await fetch('https://v2.jokeapi.dev/joke/Any');
+	const data = await response.json();
+	return data as JokeApiSingleResponse;
+}
+
+export default async function Page() {
+	const data = await fetchJokes();
+	console.log(data);
 	return (
-		<div>
-			<h1>App Router</h1>
-			<Link href='/home'>Link</Link>
-			<Counter />
-			<Button variant='outline'>Button</Button>
+		<div className='flex flex-col items-center'>
+			<h3 className='text-lg font-bold mb-6'>Joke of the day:</h3>
+			<JokeView jokes={[data]} />
 		</div>
 	);
 }
