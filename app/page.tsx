@@ -2,7 +2,9 @@ import JokeView from './components/JokeView/JokeView';
 import { JokeApiSingleResponse } from './types';
 
 async function fetchJokes() {
-	const response = await fetch('https://v2.jokeapi.dev/joke/Any');
+	const response = await fetch(
+		'https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,racist'
+	);
 	const data = await response.json();
 	return data as JokeApiSingleResponse;
 }

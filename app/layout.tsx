@@ -22,7 +22,7 @@ export default function RootLayout({
 						<Header />
 						<div className='flex'>
 							<SideBar />
-							<main className='flex-grow p-4 h-[calc(100vh-70px)] flex items-center justify-center'>
+							<main className='flex-grow p-4 h-[calc(100vh-70px)] flex justify-center overflow-y-scroll'>
 								{children}
 							</main>
 						</div>

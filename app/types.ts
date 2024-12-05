@@ -6,7 +6,8 @@ export type IJokeCategory =
 	| 'Dark'
 	| 'Pun'
 	| 'Spooky'
-	| 'Christmas';
+	| 'Christmas'
+	| 'Any';
 
 export interface IJoke {
 	category: IJokeCategory;

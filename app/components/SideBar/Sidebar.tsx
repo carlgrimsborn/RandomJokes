@@ -18,12 +18,12 @@ import {
 	SquareDashedBottom,
 	Skull,
 	Type,
-	Ghost
+	Ghost,
+	Dices
 } from 'lucide-react';
 import { useState } from 'react';
 import BlackListSideBarMenu from '../BlackListSideBarMenu';
 import Link from 'next/link';
-import { IJokeCategory } from '../../types';
 import { IItems } from './types';
 
 export const SideBar = () => {
@@ -39,10 +39,6 @@ export const SideBar = () => {
 			icon: SquareDashedBottom
 		},
 		{
-			title: 'Dark',
-			icon: Skull
-		},
-		{
 			title: 'Pun',
 			icon: Type
 		},
@@ -53,6 +49,14 @@ export const SideBar = () => {
 		{
 			title: 'Christmas',
 			icon: CandyCane
+		},
+		{
+			title: 'Dark',
+			icon: Skull
+		},
+		{
+			title: 'Any',
+			icon: Dices
 		}
 	];
 
