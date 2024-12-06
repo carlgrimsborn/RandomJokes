@@ -14,7 +14,7 @@ export default async function Page() {
 	console.log(data);
 	return (
 		<div className='flex flex-col items-center'>
-			<h3 className='text-lg font-bold mb-6'>Joke of the day:</h3>
+			<h3 className='text-lg font-bold mb-6'>Random joke:</h3>
 			<JokeView jokes={[data]} />
 		</div>
 	);
