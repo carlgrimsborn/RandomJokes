@@ -2,6 +2,12 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Page from '../../search/page';
 
+global.fetch = jest.fn(() =>
+	Promise.resolve({
+		json: () => Promise.resolve({ error: false, jokes: [] })
+	})
+) as any;
+
 test('AmountDropDown can select a value and display it', async () => {
 	const user = userEvent.setup();
 	render(<Page />);

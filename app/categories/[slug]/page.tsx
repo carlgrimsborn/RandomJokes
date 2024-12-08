@@ -2,6 +2,7 @@ import { JokeApiResponse } from '@/app/types';
 import React from 'react';
 import { PageProps } from '../types';
 import JokeView from '@/app/components/JokeView/JokeView';
+import ErrorComponent from '../../components/ErrorComponent/ErrorComponent';
 
 async function fetchJokeCategory(category: string, safeMode: boolean) {
 	const response = await fetch(
@@ -20,6 +21,12 @@ const page: React.FC<PageProps> = async ({ params: { slug } }) => {
 		<div className='h-full flex flex-col items-center '>
 			<h2 className='flex font-semibold text-lg mb-10'>{slug}</h2>
 			<JokeView jokes={data.jokes} />
+			{data.error && (
+				<ErrorComponent
+					title={data.message && data.message}
+					description={data.additionalInfo && data.additionalInfo}
+				/>
+			)}
 		</div>
 	);
 };

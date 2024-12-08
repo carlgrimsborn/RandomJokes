@@ -25,15 +25,13 @@ export default function RootLayout({
 		<html lang='en' suppressHydrationWarning>
 			<body>
 				<Providers>
-					<SidebarProvider className='flex-col'>
-						<Header links={headerLinks} />
-						<div className='flex'>
-							<SideBar />
-							<main className='flex-grow p-4 h-[calc(100vh-70px)] flex justify-center overflow-y-scroll'>
-								{children}
-							</main>
-						</div>
-					</SidebarProvider>
+					<Header links={headerLinks} />
+					<div className='flex'>
+						<SideBar />
+						<main className='flex-grow p-4 h-[calc(100vh-70px)] flex justify-center overflow-y-scroll'>
+							{children}
+						</main>
+					</div>
 				</Providers>
 			</body>
 		</html>

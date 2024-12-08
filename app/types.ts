@@ -32,8 +32,12 @@ export interface JokeApiResponse {
 	error: boolean;
 	amount: number;
 	jokes: IJoke[];
+	message?: string;
+	additionalInfo?: string;
 }
 
 export interface JokeApiSingleResponse extends IJoke {
 	error: boolean;
+	message?: string;
+	additionalInfo?: string;
 }
