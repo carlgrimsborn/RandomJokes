@@ -22,7 +22,6 @@ import {
 	Dices
 } from 'lucide-react';
 import { useState } from 'react';
-import BlackListSideBarMenu from '../BlackListSideBarMenu';
 import Link from 'next/link';
 import { IItems } from './types';
 
@@ -104,10 +103,6 @@ export const SideBar = () => {
 							))}
 						</SidebarMenu>
 					</SidebarGroupContent>
-					<SidebarGroup className='p-0 pt-1'>
-						<SidebarGroupLabel>BlackList flags</SidebarGroupLabel>
-						<BlackListSideBarMenu items={blackListItems} />
-					</SidebarGroup>
 				</SidebarGroup>
 			</SidebarContent>
 			<SidebarFooter />

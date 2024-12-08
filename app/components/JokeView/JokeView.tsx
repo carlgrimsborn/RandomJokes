@@ -10,7 +10,9 @@ const JokeView: React.FC<IJokeView> = ({ jokes }) => {
 							className='bg-accent p-10 rounded-md flex w-full max-w-4xl flex-col'
 							key={joke.id}
 						>
-							<p className='text-center'>{joke.joke}</p>
+							<p className='text-center' role='banner'>
+								{joke.joke}
+							</p>
 						</li>
 					) : (
 						<li
@@ -20,7 +22,9 @@ const JokeView: React.FC<IJokeView> = ({ jokes }) => {
 							<h1 className='font-medium mb-2 text-center'>
 								{joke.setup}
 							</h1>
-							<p className='text-center'>{joke.delivery}</p>
+							<p className='text-center' role='banner'>
+								{joke.delivery}
+							</p>
 						</li>
 					)
 				)}

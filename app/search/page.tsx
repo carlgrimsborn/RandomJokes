@@ -81,7 +81,7 @@ const page = () => {
 					</Button>
 				</div>
 			</div>
-			{jokes ? <JokeView jokes={jokes} /> : <p>no jokes found</p>}
+			{jokes ? <JokeView jokes={jokes} /> : <p>No jokes found</p>}
 		</div>
 	);
 };
