@@ -14,7 +14,8 @@ async function fetchJokeCategory(category: string, safeMode: boolean) {
 	return data as JokeApiResponse;
 }
 
-const page: React.FC<PageProps> = async ({ params: { slug } }) => {
+const page: React.FC<PageProps> = async ({ params }) => {
+	const { slug } = await params;
 	const data = await fetchJokeCategory(slug, slug !== 'Dark');
 	return (
 		<div className='h-full flex flex-col items-center '>
