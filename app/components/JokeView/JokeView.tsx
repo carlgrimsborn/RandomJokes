@@ -1,3 +1,4 @@
+import ActionButton from '../ActionButton/ActionButton';
 import { IJokeView } from './types';
 
 const JokeView: React.FC<IJokeView> = ({ jokes }) => {
@@ -7,16 +8,17 @@ const JokeView: React.FC<IJokeView> = ({ jokes }) => {
 				{jokes.map((joke) =>
 					joke.type === 'single' ? (
 						<li
-							className='bg-accent p-10 rounded-md flex w-full max-w-4xl flex-col'
+							className='bg-accent p-10 rounded-md flex w-full max-w-4xl flex-col relative py-16'
 							key={joke.id}
 						>
 							<p className='text-center' role='banner'>
 								{joke.joke}
 							</p>
+							<ActionButton joke={joke} />
 						</li>
 					) : (
 						<li
-							className='bg-accent p-10 rounded-md flex w-full max-w-4xl flex-col'
+							className='bg-accent p-10 rounded-md flex w-full max-w-4xl flex-col relative py-16'
 							key={joke.id}
 						>
 							<h1 className='font-medium mb-2 text-center'>
@@ -25,6 +27,7 @@ const JokeView: React.FC<IJokeView> = ({ jokes }) => {
 							<p className='text-center' role='banner'>
 								{joke.delivery}
 							</p>
+							<ActionButton joke={joke} />
 						</li>
 					)
 				)}

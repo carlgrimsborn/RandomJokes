@@ -41,3 +41,12 @@ export interface JokeApiSingleResponse extends IJoke {
 	message?: string;
 	additionalInfo?: string;
 }
+
+export interface ReducerState {
+	savedJokes: IJoke[];
+}
+
+export type ReducerAction = {
+	type: 'add' | 'remove';
+	payload: IJoke;
+};

@@ -2,7 +2,6 @@ import '../globals.css';
 import Providers from './providers';
 import Header from './components/Header/Header';
 import { SideBar } from './components/SideBar/Sidebar';
-import { SidebarProvider } from '@/components/ui/sidebar';
 import { HeaderLink } from './components/Header/types';
 
 export const metadata = {
@@ -19,6 +18,10 @@ export default function RootLayout({
 		{
 			name: 'Search',
 			route: '/search'
+		},
+		{
+			name: 'Saved',
+			route: '/saved-jokes'
 		}
 	];
 	return (

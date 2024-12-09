@@ -32,6 +32,6 @@
 		"types.d.ts",
 		".next/types/**/*.ts",
 		"components/lib/utils.ts"
-	],
+, "app/context.tsx"	],
 	"exclude": ["node_modules"]
 }
