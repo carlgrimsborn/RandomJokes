@@ -455,6 +455,7 @@ const SidebarGroupLabel = React.forwardRef<
 
 	return (
 		<Comp
+			//@ts-ignore
 			ref={ref}
 			data-sidebar='group-label'
 			className={cn(
@@ -476,6 +477,7 @@ const SidebarGroupAction = React.forwardRef<
 
 	return (
 		<Comp
+			//@ts-ignore
 			ref={ref}
 			data-sidebar='group-action'
 			className={cn(
@@ -578,6 +580,7 @@ const SidebarMenuButton = React.forwardRef<
 
 		const button = (
 			<Comp
+				//@ts-ignore
 				ref={ref}
 				data-sidebar='menu-button'
 				data-size={size}
@@ -626,6 +629,7 @@ const SidebarMenuAction = React.forwardRef<
 
 	return (
 		<Comp
+			//@ts-ignore
 			ref={ref}
 			data-sidebar='menu-action'
 			className={cn(
@@ -743,6 +747,7 @@ const SidebarMenuSubButton = React.forwardRef<
 
 	return (
 		<Comp
+			//@ts-ignore
 			ref={ref}
 			data-sidebar='menu-sub-button'
 			data-size={size}
