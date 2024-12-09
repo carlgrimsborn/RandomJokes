@@ -5,7 +5,7 @@ import { IHeader } from './types';
 
 const Header: FC<IHeader> = ({ links }) => {
 	return (
-		<header className='bg-gray-800 text-white shadow-md'>
+		<header className='bg-headerBar text-white shadow-md'>
 			<nav className='p-4 flex items-center justify-between'>
 				<div className='flex items-center flex-row'>
 					<Link

@@ -59,15 +59,6 @@ export const SideBar = () => {
 		}
 	];
 
-	const blackListItems = [
-		'nsfw',
-		'religious',
-		'political',
-		'racist',
-		'sexist',
-		'explicit'
-	];
-
 	return (
 		<Sidebar className='h-[calc(100vh-70px)]' collapsible='none'>
 			<SidebarHeader className='text-center mt-3'>
@@ -96,7 +87,7 @@ export const SideBar = () => {
 											href={`/categories/${item.title}`}
 										>
 											<item.icon />
-											<span>{item.title}</span>
+											<p>{item.title}</p>
 										</Link>
 									</SidebarMenuButton>
 								</SidebarMenuItem>
