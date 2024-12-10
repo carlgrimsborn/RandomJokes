@@ -8,7 +8,8 @@ async function fetchJokeCategory(category: string, safeMode: boolean) {
 	const response = await fetch(
 		`https://v2.jokeapi.dev/joke/${category}?blacklistFlags=nsfw,racist&amount=10${
 			safeMode && '&safe-mode'
-		}`
+		}`,
+		{ next: { revalidate: 5 } }
 	);
 	const data = await response.json();
 	return data as JokeApiResponse;
